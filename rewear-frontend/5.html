@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>REwear Admin Panel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: #f8f8f8;
+      padding: 16px;
+      max-width: 425px;
+      margin: auto;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 2px solid #6342e8;
+      border-radius: 12px;
+      padding: 8px;
+      background-color: white;
+    }
+
+    .brand {
+      color: #6342e8;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .search-bar {
+      flex: 1;
+      margin: 0 12px;
+      background: #6342e8;
+      border-radius: 25px;
+      padding: 4px 12px;
+    }
+
+    .search-bar input {
+      background: transparent;
+      border: none;
+      color: white;
+      width: 100%;
+      font-size: 12px;
+      outline: none;
+    }
+
+    .avatar {
+      background: #6342e8;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+    }
+
+    .tabs {
+      margin: 20px 0;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .tabs button {
+      flex: 1;
+      margin: 0 4px;
+      padding: 8px;
+      border: 1px solid #6342e8;
+      background: white;
+      border-radius: 8px;
+      color: #6342e8;
+      font-weight: bold;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .card {
+      background: white;
+      border: 2px solid #cfcfcf;
+      border-radius: 12px;
+      padding: 12px;
+      margin-bottom: 16px;
+      display: flex;
+      gap: 12px;
+      justify-content: space-between;
+    }
+
+    .left {
+      display: flex;
+      gap: 10px;
+    }
+
+    .circle {
+      width: 50px;
+      height: 50px;
+      background: #d9d9d9;
+      border-radius: 50%;
+    }
+
+    .text {
+      font-size: 13px;
+      color: #29196b;
+    }
+
+    .text p {
+      margin-bottom: 4px;
+    }
+
+    .right {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      justify-content: center;
+    }
+
+    .right button {
+      padding: 4px 8px;
+      background: #6342e8;
+      border: none;
+      color: white;
+      font-size: 12px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .right .danger {
+      background: #d52c2c;
+    }
+
+    .right .gray {
+      background: gray;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">REwear</div>
+    <div class="search-bar">
+      <input type="text" placeholder="search..." />
+    </div>
+    <div class="avatar"></div>
+  </header>
+
+  <div class="tabs">
+    <button>Manage Users</button>
+    <button>Manage Orders</button>
+    <button>Manage Listings</button>
+  </div>
+
+  <!-- Manage Users Card -->
+  <div class="card">
+    <div class="left">
+      <div class="circle"></div>
+      <div class="text">
+        <p><strong>Name:</strong> Admin</p>
+        <p><strong>Role:</strong> Admin/User</p>
+        <p><strong>Status:</strong> Active/Banned</p>
+        <br />
+        <p>Profile Picture</p>
+        <p>Full Name</p>
+        <p>Email</p>
+        <p>Position</p>
+      </div>
+    </div>
+    <div class="right">
+      <button>Suspend / Ban User</button>
+      <button class="danger">Delete User</button>
+      <button class="gray">View Profile / Details</button>
+    </div>
+  </div>
+
+  <!-- Manage Orders Card -->
+  <div class="card">
+    <div class="left">
+      <div class="circle"></div>
+      <div class="text">
+        <p><strong>Name:</strong> User</p>
+        <p><strong>Role:</strong> Buyer / Swapper</p>
+        <p><strong>Status:</strong> Active</p>
+        <br />
+        <p>Item Name</p>
+        <p>Buyer: Swapper</p>
+        <p>Seller: Seller</p>
+        <p>Timestamp</p>
+      </div>
+    </div>
+    <div class="right">
+      <button>View Details</button>
+      <button>Mark as Completed</button>
+      <button class="gray">Cancel / Dispute</button>
+    </div>
+  </div>
+
+  <!-- Manage Listings Card -->
+  <div class="card">
+    <div class="left">
+      <div class="circle"></div>
+      <div class="text">
+        <p><strong>Item Title</strong></p>
+        <p>User who uploaded: mail id / user id</p>
+        <p>Submission date</p>
+        <p><strong>Status:</strong> Pending / Approved / Rejected</p>
+      </div>
+    </div>
+    <div class="right">
+      <button>Approve</button>
+      <button class="danger">Reject</button>
+      <button class="gray">Delete</button>
+    </div>
+  </div>
+</body>
+</html>

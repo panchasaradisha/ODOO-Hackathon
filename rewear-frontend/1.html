@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ReWear Landing Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: white;
+      color: #372482;
+      max-width: 375px;
+      margin: auto;
+      overflow-x: hidden;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #6342e8;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: #6342e8;
+      padding: 4px 8px;
+      border-radius: 25px;
+      width: 120px;
+    }
+
+    .search-box input {
+      border: none;
+      background: transparent;
+      color: white;
+      font-size: 12px;
+      outline: none;
+      flex: 1;
+    }
+
+    .avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: #6342e8;
+    }
+
+    .hero {
+      margin: 12px;
+      border-radius: 15px;
+      background: linear-gradient(180deg, rgba(99,66,232,0.45) 0%, rgba(55,37,130,0.11) 100%);
+      position: relative;
+      overflow: hidden;
+      padding: 16px;
+    }
+
+    .hero-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 100%;
+      background: #0066ff;
+    }
+
+    .hero img {
+      width: 100%;
+      max-height: 250px;
+      object-fit: contain;
+      z-index: 1;
+      position: relative;
+    }
+
+    .hero-text {
+      margin-top: 12px;
+      z-index: 2;
+      position: relative;
+    }
+
+    .badge {
+      background: rgba(255, 255, 255, 0.8);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: #372482;
+      margin-bottom: 6px;
+      display: inline-block;
+    }
+
+    .hero-title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .btn-primary {
+      margin-top: 8px;
+      background: #6342e8;
+      color: white;
+      padding: 6px 16px;
+      border: none;
+      border-radius: 25px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .centered-section {
+      text-align: center;
+      padding: 16px;
+    }
+
+    .category-list {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding: 0 16px 10px;
+    }
+
+    .category-circle {
+      min-width: 50px;
+      height: 50px;
+      background: #6342e8;
+      border-radius: 50%;
+    }
+
+    .filter-btn {
+      display: flex;
+      justify-content: flex-end;
+      padding: 0 16px;
+    }
+
+    .filter-btn button {
+      background: #6342e8;
+      color: white;
+      font-size: 10px;
+      padding: 4px 12px;
+      border-radius: 25px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      padding: 16px;
+    }
+
+    .product-card {
+      background: #d9d9d9;
+      height: 120px;
+      border-radius: 10px;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 8px;
+    }
+
+    .add-btn {
+      background: #6342e8;
+      color: white;
+      font-size: 10px;
+      border: none;
+      padding: 4px 10px;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+
+    .heart {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      background: white;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .testimonials {
+      padding: 16px;
+    }
+
+    .testimonial-card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      padding: 16px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .testimonial-image {
+      width: 80px;
+      height: 80px;
+      background: #efefef;
+      border-radius: 10px;
+    }
+
+    .stars {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 8px;
+    }
+
+    .star {
+      width: 10px;
+      height: 10px;
+      background: #6342e8;
+      border-radius: 50%;
+    }
+
+    .testimonial-text {
+      font-size: 12px;
+      color: #372482;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">REware</div>
+    <div class="search-box">
+      <input type="text" placeholder="search.." />
+      🔍
+    </div>
+    <div class="avatar"></div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-bar"></div>
+    <img src="Screenshot 2025-07-12 151420.png" alt="Model" />
+    <div class="hero-text">
+      <div class="badge">New Collection</div>
+      <div class="hero-title">For Summer Season</div>
+      <div style="font-size: 12px;">From <strong>Bleuwing</strong></div>
+      <p style="font-size: 10px; margin-top: 4px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis</p>
+      <button class="btn-primary">Explore Collection</button>
+    </div>
+  </section>
+
+  <section class="centered-section">
+    <p class="hero-title" style="font-size: 13px;">Welcome to ReWear – A community clothing exchange to swap or redeem clothes sustainably!</p>
+    <div style="margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
+      <button class="btn-primary">Start Swapping</button>
+      <button class="btn-primary">Browse Items</button>
+      <button class="btn-primary">List an Item</button>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="hero-title" style="font-size: 13px; margin: 0 16px 10px; color: #6342e8;">Categories</h2>
+    <div class="category-list">
+      <div class="category-circle"></div>
+      <div class="category-circle"></div>
+      <div class="category-circle"></div>
+      <div class="category-circle"></div>
+      <div class="category-circle"></div>
+    </div>
+    <div class="filter-btn">
+      <button>Filter</button>
+    </div>
+  </section>
+
+  <section class="product-grid">
+    <div class="product-card">
+      <div class="heart">❤</div>
+      <button class="add-btn">Add to cart</button>
+    </div>
+    <div class="product-card">
+      <div class="heart">❤</div>
+      <button class="add-btn">Add to cart</button>
+    </div>
+    <div class="product-card">
+      <div class="heart">❤</div>
+      <button class="add-btn">Add to cart</button>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <h2 class="hero-title" style="font-size: 13px; color: #6342e8; margin-bottom: 10px;">Testimonials</h2>
+    <div class="testimonial-card">
+      <div class="testimonial-image"></div>
+      <div>
+        <div class="stars">
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+        </div>
+        <p class="testimonial-text">Text</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

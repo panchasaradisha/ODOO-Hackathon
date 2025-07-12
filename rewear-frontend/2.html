@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>REwear - Item Listing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: #29196b;
+      max-width: 375px;
+      margin: auto;
+      padding: 16px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .brand {
+      font-weight: 700;
+      color: #6342e8;
+      font-size: 20px;
+    }
+
+    .search-bar {
+      flex: 1;
+      margin: 0 10px;
+      background-color: #6342e8;
+      border-radius: 25px;
+      padding: 5px 12px;
+      display: flex;
+      align-items: center;
+    }
+
+    .search-bar input {
+      flex: 1;
+      border: none;
+      background: transparent;
+      color: white;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: #6342e8;
+    }
+
+    .gray-box {
+      background-color: #d9d9d9;
+      border-radius: 10px;
+      height: 200px;
+      margin-top: 20px;
+    }
+
+    .desc {
+      margin-top: 16px;
+      font-size: 14px;
+    }
+
+    .desc span {
+      display: block;
+      margin-top: 4px;
+      font-weight: 600;
+      color: #6342e8;
+    }
+
+    .status {
+      font-size: 13px;
+      margin-top: 12px;
+    }
+
+    .uploader {
+      margin-top: 12px;
+      font-size: 14px;
+    }
+
+    .uploader span {
+      font-weight: 600;
+      color: #6342e8;
+    }
+
+    .filter-btn {
+      background: #6342e8;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      width: 40px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      margin-left: auto;
+      margin-top: 10px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .product-card {
+      background-color: #d9d9d9;
+      border-radius: 10px;
+      height: 120px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .heart {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 16px;
+      height: 16px;
+      background: url('https://www.svgrepo.com/show/530445/heart.svg') no-repeat center;
+      background-size: contain;
+    }
+
+    .add-to-cart {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #6342e8;
+      color: white;
+      font-size: 10px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    .add-to-cart img {
+      width: 12px;
+      height: 12px;
+      margin-left: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">REwear</div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search..." />
+    </div>
+    <div class="avatar"></div>
+  </header>
+
+  <div class="gray-box"></div>
+
+  <div class="desc">
+    <strong>Product Description</strong>
+    <span>Title: Denim Jacket</span>
+    <span>Price: 30 points</span>
+    <span>Size: M</span>
+    <span>Condition: Gently Used</span>
+    <span>Redeem via Points</span>
+    <span>Swap Request</span>
+  </div>
+
+  <div class="status">
+    <strong>Status:</strong> Available | In Progress | Swapped
+  </div>
+
+  <div class="uploader">
+    <span>Uploader:</span> Disha
+  </div>
+
+  <button class="filter-btn">&#x1F50D;</button>
+
+  <div class="product-grid">
+    <div class="product-card">
+      <div class="heart"></div>
+      <div class="add-to-cart">
+        Add to cart <img src="https://www.svgrepo.com/show/502731/cart.svg" alt="cart" />
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="heart"></div>
+      <div class="add-to-cart">
+        Add to cart <img src="https://www.svgrepo.com/show/502731/cart.svg" alt="cart" />
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="heart"></div>
+      <div class="add-to-cart">
+        Add to cart <img src="https://www.svgrepo.com/show/502731/cart.svg" alt="cart" />
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
